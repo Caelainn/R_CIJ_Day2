@@ -1,0 +1,38 @@
+###################
+## Caelainn Barr ##
+## The Guardian  ##
+## @caelainnbarr ##
+###################
+
+#In this class we’re going to look at how to work with APIs in RStudio
+
+#################
+## APIs & more ##
+#################
+
+#R is a versatile tool when it comes to data imports 
+#It can handle data from a variety of sources
+
+#One of the useful import packages is for working with APIs and is called httr
+#Let's install it and look at its functionality
+install.packages("httr")
+library("httr")
+
+#We're going to pull data from the European Court of Human Rights
+#The data comes in an xml feed from the ECHR
+#Let’s look at how we can pull the data down with the functions in the package
+
+#Here’s an example of pulling data from the US data set data.gov website in the US
+#You can get your own key directly from http://www.data.gov/developers/apis
+# Data.gov Utility Rates API
+sample2 <- GET(“http://api.data.gov/nrel/utility_rates/v3.json?api_key=sample_key&address=1600+Amphitheatre+Parkway,+Mountain+View,+CA“)
+content(sample2)
+
+##########################
+## Large datasets & rio ##
+##########################
+
+#Another package that is invaluable for transforming data sets from one format to another is rio
+#Let's install it and load it from the library
+install.packages("rio")
+library("rio")
